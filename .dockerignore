@@ -2,6 +2,7 @@
 __pycache__/
 *.pyc
 .venv/
+venv/
 .env
 .env.*
 .mlruns/
@@ -11,11 +12,8 @@ mlruns/
 # VSCode
 .vscode/*
 
-# Models & logs
-models/*.joblib
-models/*.pkl
+# Logs
 logs/*
-!logs/.gitkeep
 
 # DVC
 .dvc/
