@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.env
+.env.*
+.mlruns/
+mlruns/
+*.db
+
+# VSCode
+.vscode/*
+
+# Models & logs
+models/*.joblib
+models/*.pkl
+logs/*
+!logs/.gitkeep
+
+# DVC
+.dvc/
+*.dvc
+.cache/
