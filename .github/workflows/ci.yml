@@ -1,30 +1,36 @@
-name: CI
+name: CI/CD Docker Build & Push
 
 on:
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
-  build-test:
+  build-and-push:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      # 1️⃣ Checkout the repository
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: 3.11
+      # 2️⃣ Set up Python (optional if you need Python for pre-build tasks)
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+      # 3️⃣ Log in to Docker Hub
+      - name: Docker Login
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Run tests
-      run: |
-        python -m unittest discover -s tests
+      # 4️⃣ Build Docker image
+      - name: Build Docker image
+        run: docker build -t chettipellysrilatha/heart-mlops-api:latest .
 
+      # 5️⃣ Push Docker image
+      - name: Push Docker image
+        run: docker push chettipellysrilatha/heart-mlops-api:latest
