@@ -239,7 +239,7 @@ mlflow ui
 
 * Default URL: http://127.0.0.1:5000
 Use: View experiment runs, compare metrics, and download models.
-
+---
 #raining & Logging
 
 ---bash
@@ -250,16 +250,14 @@ Loads preprocessed data
 Trains models
 Logs all parameters, metrics, and models to MLflow
 
+---
 #Model Evaluation
 
 ---bash
-Script: src/evaluate.py
-
----
-*Functionality: Evaluate trained model(s) on test set and log metrics.
-
----bash
 python -m src.evaluate
+
+----
+*Functionality: Evaluate trained model(s) on test set and log metrics.
 
 ----
 To check the og requests, responses 
@@ -273,12 +271,10 @@ Latency.
 cat logs/predictions.log
 
 ---
-  
-Store logs in logs/ folder
+  Store logs in logs/ folder
 * All API requests, responses, and latency are logged
 * Logs saved to a file and SQLite database
 * Includes model version for reproducibility
-
 ---
 
 ## 10. Summary
