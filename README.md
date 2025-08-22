@@ -235,17 +235,15 @@ Workflow location: `.github/workflows/ci.yml`
 ---bash
 mlflow ui
 
-----
+---
 
 * Default URL: http://127.0.0.1:5000
 Use: View experiment runs, compare metrics, and download models.
 ---
 #raining & Logging
 
----bash
 python -m src.train
 
----
 Loads preprocessed data
 Trains models
 Logs all parameters, metrics, and models to MLflow
@@ -253,13 +251,12 @@ Logs all parameters, metrics, and models to MLflow
 ---
 #Model Evaluation
 
----bash
 python -m src.evaluate
 
-----
+---
 *Functionality: Evaluate trained model(s) on test set and log metrics.
 
-----
+---
 To check the og requests, responses 
 Timestamp, 
 Model version, 
@@ -267,7 +264,6 @@ Input features,
 Prediction result & probability,
 Latency.
 
----bash
 cat logs/predictions.log
 
 ---
