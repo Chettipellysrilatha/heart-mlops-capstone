@@ -198,7 +198,7 @@ python test_api.py
 ---
 
 ## 7. Docker
-# Use the link for the docker image access : docker image https://hub.docker.com/r/chettipellysrilatha/heart-mlops-api
+#Use the link for the docker image access : docker image https://hub.docker.com/r/chettipellysrilatha/heart-mlops-api
 
 ### Build Docker Image
 
@@ -229,30 +229,30 @@ Workflow location: `.github/workflows/ci.yml`
 
 ---
 ## 9. Logging
-# MLflow UI
-
----bash 
-----mlflow ui
-
+#MLflow UI
+```bash
 Default URL: http://127.0.0.1:5000
-
+```
 Use: View experiment runs, compare metrics, and download models.
 
-# raining & Logging
+#raining & Logging
 ---bash
----python -m src.train
-
+python -m src.train
+```
 Loads preprocessed data
 Trains models
 Logs all parameters, metrics, and models to MLflow
 
 # Model Evaluation
 
----Script: src/evaluate.py
-
+---bash
+Script: src/evaluate.py
+---
 Functionality: Evaluate trained model(s) on test set and log metrics.
-  ---bash
----python -m src.evaluate
+
+---bash
+python -m src.evaluate
+----
 # To check the og requests, responses 
 Timestamp, 
 Model version, 
@@ -260,8 +260,9 @@ Input features,
 Prediction result & probability,
 Latency.
 
---bash
----cat logs/predictions.log
+---bash
+cat logs/predictions.log
+---
   
 Store logs in logs/ folder
 * All API requests, responses, and latency are logged
