@@ -229,46 +229,20 @@ Workflow location: `.github/workflows/ci.yml`
 
 ---
 ## 9. Logging
-
-#MLflow UI
-
----bash
+```bash
 mlflow ui
-
----
-
+```
 * Default URL: http://127.0.0.1:5000
-Use: View experiment runs, compare metrics, and download models.
----
-#raining & Logging
-
-python -m src.train
-
-Loads preprocessed data
-Trains models
-Logs all parameters, metrics, and models to MLflow
 
 ---
-#Model Evaluation
 
-python -m src.evaluate
-
----
-*Functionality: Evaluate trained model(s) on test set and log metrics.
-
----
-To check the og requests, responses 
-Timestamp, 
-Model version, 
-Input features,
-Prediction result & probability,
-Latency.
-
+```bash
 cat logs/predictions.log
+```
 
----
-  Store logs in logs/ folder
-* All API requests, responses, and latency are logged
+* Store logs in logs/ folder
+*  All API requests, responses, and latency are logged
+* Timestamp, Model version, Input features, Prediction result & probability,Latency
 * Logs saved to a file and SQLite database
 * Includes model version for reproducibility
 ---
